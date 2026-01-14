@@ -4,7 +4,19 @@
     <title>Redirecting...</title>
     <script>
       window.onload = function () {
-        window.location.href = "dexment2://dexment2.com/createagreement";
+        // Read query parameters
+        const params = new URLSearchParams(window.location.search);
+
+        // Convert params back to query string
+        const queryString = params.toString();
+
+        // Build deep link
+        const deepLink =
+          "dexment2://dexment2.com/createagreement" +
+          (queryString ? "?" + queryString : "");
+
+        // Redirect to app
+        window.location.href = deepLink;
       };
     </script>
   </head>
