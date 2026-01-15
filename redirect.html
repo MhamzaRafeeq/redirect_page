@@ -9,11 +9,13 @@
 
         // Convert params back to query string
         const queryString = params.toString();
+        console.log(queryString);
 
         // Build deep link
         const deepLink =
           "dexment2://dexment2.com/createagreementR" +
           (queryString ? "?" + queryString : "");
+        console.log(deeplink);
 
         // Redirect to app
         window.location.href = deepLink;
